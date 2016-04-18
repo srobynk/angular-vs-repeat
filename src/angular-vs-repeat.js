@@ -281,6 +281,9 @@
                                         var size = ($attrs.vsSize || $attrs.vsSizeProperty) ?
                                                         s.$eval($attrs.vsSize || $attrs.vsSizeProperty) :
                                                         $scope.elementSize;
+                                        if(angular.isUndefined(size)){
+                                            size = $scope.elementSize;
+                                        }
                                         s.$destroy();
                                         return size;
                                     });
